@@ -102,6 +102,25 @@
 // lastEntry([3, 6, 9, 17, 4, 6, 25, 8]) geeft 8
 // lastEntry([46, 65, 34, 204, 190, 89], 3) geeft [204, 190, 89]
 
+function lastEntry(array, number=1) {
+
+    if (number ===1 ){
+        return array[array.length - number];
+    } else {
+        let arrayPlaceholder = [];
+
+
+        for (let i = 0; i < number; i++) {
+            arrayPlaceholder.push(array[ array.length - (number - i)])
+        }
+
+        return arrayPlaceholder;
+    }
+}
+
+console.log(lastEntry([46, 65, 34, 204, 190, 89], 3));
+console.log(lastEntry([46, 65, 34, 204, 190, 89]));
+
 
 
 /* Opdracht 10 */
@@ -109,6 +128,25 @@
 // Voor getallen die deelbaar zijn door 3 print je "Fizz" in plaats van het getal.
 // Voor getallen die deelbaar zijn door 5 print je "Buzz" in plaats van het getal.
 // Voor getallen die zowel deelbaar zijn door 3 als door 5, print je "FizzBuzz".
+
+function fizzBuzzCounter () {
+
+    for (let i = 1; i < 101; i++) {
+
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+
+    }
+}
+    // fizzBuzzCounter();
+
 // ---- Verwachte uitkomst:
 // 1
 // 2
@@ -151,3 +189,21 @@
 // ["Piet", "Henk"] geeft "Hoi Piet en Henk!"
 // ["A", "B", "C", "D", "E", "F"] geeft "Hoi A, B, C, D, E en F!"
 
+const hiToAll = array => "Hallo " + array.join(", ") + "!";
+
+    // for (let i = 0; i < array.length; i++) {
+    //
+    //     stringGreetings += array[i];
+    //
+    //     if (array.length-1===i) {
+    //         stringGreetings += "!"
+    //     } else {
+    //         stringGreetings += ", "
+    //     }
+    //
+    // }
+
+
+
+
+console.log(hiToAll(["Nick", "Nova", "Mitchel", "Arjen"]));
